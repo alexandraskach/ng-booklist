@@ -1,0 +1,30 @@
+<nb-layout>
+  <nb-sidebar>
+    <nb-menu tag="menu" [items]="menuItems" (click)="getSelectedItem()"></nb-menu>
+  </nb-sidebar>
+  <nb-layout-column>
+    <div *ngIf="showHome">
+      <div class="title-section">
+        <div class="title-section__title">Hello !</div>
+      </div>
+      <div class="container">
+        <div class="card-section">
+          <div class="card-section__item">
+            <nb-icon class="card-section__item-icon" icon="book-open-outline" status="primary"></nb-icon>
+            <span class="card-section__item-description"> You have 3 books</span>
+          </div>
+        </div>
+
+        <div class="card-section">
+          <div class="card-section__item">
+            <nb-icon class="card-section__item-icon" icon="plus-circle-outline" status="primary"></nb-icon>
+            <span class="card-section__item-description"> Add new book</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+</nb-layout>

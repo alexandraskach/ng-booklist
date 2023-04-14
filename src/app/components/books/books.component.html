@@ -1,0 +1,16 @@
+<div class="title-section">
+  <div class="title-section__title">My books 📖</div>
+
+</div>
+
+<div class="container">
+  <div class="books-section">
+    <div class="books-section__book" *ngFor="let book of bookList">
+      <nb-icon class="books-section__book-fav" icon="heart-outline" status="primary"></nb-icon>
+      <nb-icon class="books-section__book-trash" icon="trash-outline" status="primary"></nb-icon>
+      <span class="books-section__book-description">{{ book.title }}</span>
+      <span class="books-section__book-description">{{ book.author }}</span>
+      <a class="books-section__book-button">Read more</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+ 
+@import "../../../styles.scss";
+.title-section {
+    display: flex;
+    padding-top: 66px;
+    color: $font-color;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  &__title {
+    font-weight: 700;
+    font-size: 22px;
+  }
+  &__search {
+    margin-top: 20px;
+    background-color: $card-color;
+    border-color: $primary-color;
+    padding: 10px 70px;
+    border-radius: 18px;
+    color: $font-color;
+  }
+}
+a {
+      text-decoration: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  color: $font-color;
+      flex-wrap: wrap;
+    flex-direction: row;
+}
+.card-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 28px;
+  &__item {
+   padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: $card-color;
+    // max-width: 300px;
+    // max-height: 400px;
+    margin: 1rem;
+    border-radius: 18px;
+    align-items: center;
+     @include respond-to('small') {
+       padding: 1rem;
+    }
+    &-button {
+      margin-top: 1rem;
+      border: 2px solid $primary-color;
+      color: $primary-color;
+      padding: 14px 28px;
+      cursor: pointer;
+      border-radius: 18px;
+
+      &:hover {
+        background-color: #40435f;
+      }
+    }
+    &-fav {
+      width: 22px;
+      position: absolute;
+      z-index: 1;
+      margin-top: -23px;
+      margin-left: -19px;
+      color: $secondary-color;
+      cursor: pointer;
+    }
+     &-icon {
+      color: $secondary-color!important;
+      cursor: pointer;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+}

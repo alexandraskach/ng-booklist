@@ -1,0 +1,42 @@
+$primary-color: #bb86fc;
+$secondary-color: #03dac5;
+$font-color: #fff;
+$font-color-secondary: #121212;
+$card-color: #292b3e;
+
+.login-section {
+  display: flex;
+  padding: 6rem 0rem 13rem 0rem;
+  color: $font-color;
+  flex-direction: column;
+  align-items: center;
+
+  &__credentials {
+    margin-top: 20px;
+    background-color: $card-color;
+    border-color: $primary-color;
+    padding: 10px 41px;
+    border-radius: 18px;
+    color: $font-color;
+    border: none;
+
+    &:hover {
+      background-color: #40435f;
+    }
+  }
+  &__button {
+    margin-top: 1rem;
+    // border: 2px solid $secondary-color;
+    color: $font-color;
+    padding: 14px 28px;
+    cursor: pointer;
+    border-radius: 18px;
+    background-color: $primary-color;
+    margin-bottom: 1rem;
+    border: none;
+
+    &:hover {
+      background-color: #40435f;
+    }
+  }
+}

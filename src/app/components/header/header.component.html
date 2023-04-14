@@ -1,0 +1,5 @@
+<div class="header">
+  <a [routerLink]="['/login']" [queryParams]="{pageLogin: true}" routerLinkActive="router-link-active">Sign in</a>
+  <a [routerLink]="['/login']" [queryParams]="{pageLogin: false}" routerLinkActive="router-link-active">Sign up</a>
+  <a (click)='logout()' >Logout</a>
+</div>
