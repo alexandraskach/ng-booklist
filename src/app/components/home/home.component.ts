@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
       title: 'Books',
       link: '/home/books',
     },
-    { title: 'Add book', link: '/add-book' },
+    { title: 'Add book', link: '/home/add-book' },
   ];
   private destroy$ = new Subject<void>();
   selectedItem: string = '';
@@ -33,11 +33,11 @@ export class HomeComponent implements OnInit {
     private fireAuth: Auth,
     private menuService: NbMenuService
   ) {
-    const books = collection(this.store, 'book');
-    collectionData(books).subscribe((value) => {
-      this.bookList = value as Book[];
-      console.log('bookList', value);
-    });
+    // const books = collection(this.store, 'book');
+    // collectionData(books).subscribe((value) => {
+    //   this.bookList = value as Book[];
+    //   console.log('bookList', value);
+    // });
   }
 
   ngOnInit(): void {}
@@ -60,10 +60,10 @@ export class HomeComponent implements OnInit {
       .pipe(takeUntil(this.destroy$))
       .subscribe((menuBag) => {
         this.selectedItem = menuBag.item.title;
-        if (this.selectedItem === 'Home'){
-         this.showHome= true;
-        }else {
-this.showHome= false;
+        if (this.selectedItem === 'Home') {
+          this.showHome = true;
+        } else {
+          this.showHome = false;
         }
       });
   }

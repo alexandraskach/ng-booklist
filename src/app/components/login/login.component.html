@@ -1,31 +1,12 @@
 <div class="login-section">
-  <h2>{{ isLogin ? "Sign in" : "Sign up" }}</h2>
-  <input
-    type="email"
-    class="login-section__credentials"
-    placeholder="email"
-    name="email"
-    [(ngModel)]="email"
-  />
-  <input
-    type="password"
-    class="login-section__credentials"
-    placeholder="password"
-    name="password"
-    [(ngModel)]="password"
-  />
-  <input
-    type="submit"
-    class="login-section__button"
-    (click)="isLogin ? login() : register()"
-    placeholder="Send"
-  />
+  <h2>{{ (isLogin ? "sign_in" : "sign_up") | translate}}</h2>
+  <input type="email" class="login-section__credentials" placeholder="email" name="email" [(ngModel)]="email" />
+  <input type="password" class="login-section__credentials" placeholder="{{'password'|translate}}" name="password" [(ngModel)]="password" />
+  <input type="submit" class="login-section__button" (click)="isLogin ? login() : register()" placeholder="Send" />
   <p>
-    {{
-      isLogin
-        ? "Don't have an account? Sign up"
-        : "Already have an account? Sign in"
-    }}
-    <span (click)="switch()">here</span>
+    {{ (isLogin ? "account_doesnt_exists"
+        : "account_exists") | translate}}
+
+    <span (click)="switch()">{{ "here" | translate }}</span>
   </p>
 </div>

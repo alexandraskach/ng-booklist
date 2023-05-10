@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 import { Auth } from '@angular/fire/auth';
-import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+} from '@angular/fire/compat/firestore';
 import { NbMenuItem, NbMenuService } from '@nebular/theme';
-import { Subject } from 'rxjs';
 import { Book } from 'src/models/book';
+import { BookService } from 'src/shared/services/book.service';
+
 
 @Component({
   selector: 'app-books',
@@ -11,24 +15,29 @@ import { Book } from 'src/models/book';
   styleUrls: ['./books.component.scss'],
 })
 export class BooksComponent {
+  private booksCollection: AngularFirestoreCollection<Book>;
   bookList: Book[] = [];
   menuItems: NbMenuItem[] = [
     { title: 'Home', link: '/home' },
     { title: 'Books', link: '/books' },
     { title: 'Add book', link: '/add-book' },
   ];
-  private destroy$ = new Subject<void>();
   selectedItem: string = '';
-
+  collection: any;
   constructor(
-    private store: Firestore,
+    private store: AngularFirestore,
     private fireAuth: Auth,
-    private menuService: NbMenuService
+    private menuService: NbMenuService,
+    private bookService: BookService
   ) {
-    const books = collection(this.store, 'book');
-    collectionData(books).subscribe((value) => {
-      this.bookList = value as Book[];
-      console.log('bookList', value);
-    });
+    this.booksCollection = store.collection<Book>('book');
+     this.booksCollection.valueChanges({ idField: 'id' }).subscribe(value=>{
+       this.bookList = value;
+        console.log(value);
+     })
+  }
+
+  deleteBook(bookId: string) {
+    this.bookService.deleteBook(bookId);
   }
 }

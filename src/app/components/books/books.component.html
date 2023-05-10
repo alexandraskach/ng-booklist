@@ -1,16 +1,15 @@
 <div class="title-section">
-  <div class="title-section__title">My books 📖</div>
-
+  <div class="title-section__title">{{"books_title" | translate}}</div>
 </div>
 
 <div class="container">
   <div class="books-section">
     <div class="books-section__book" *ngFor="let book of bookList">
       <nb-icon class="books-section__book-fav" icon="heart-outline" status="primary"></nb-icon>
-      <nb-icon class="books-section__book-trash" icon="trash-outline" status="primary"></nb-icon>
+      <nb-icon class="books-section__book-trash" icon="trash-outline" status="primary" (click)="deleteBook(book.id)"></nb-icon>
       <span class="books-section__book-description">{{ book.title }}</span>
       <span class="books-section__book-description">{{ book.author }}</span>
-      <a class="books-section__book-button">Read more</a>
+      <a class="books-section__book-button" [routerLink]="['/home/book',book.id]" [queryParams]="{bookId: book.id}" routerLinkActive="router-link-active">{{"readmore" | translate}}</a>
     </div>
   </div>
 </div>

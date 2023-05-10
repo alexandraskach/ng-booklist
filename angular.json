@@ -76,7 +76,9 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "tp-angular:build"
+            "browserTarget": "tp-angular:build",
+            "format": "xlf",
+            "outputPath": "src/locale"
           }
         },
         "test": {

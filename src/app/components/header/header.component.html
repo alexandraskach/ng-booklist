@@ -1,5 +1,9 @@
 <div class="header">
+  <nb-select placeholder="Select language" [size]='size' [(selected)]="selectedLanguage" (selectedChange)="changeLanguage()">
+    <nb-option value="fr">French</nb-option>
+    <nb-option value="eng">English</nb-option>
+  </nb-select>
   <a [routerLink]="['/login']" [queryParams]="{pageLogin: true}" routerLinkActive="router-link-active">Sign in</a>
   <a [routerLink]="['/login']" [queryParams]="{pageLogin: false}" routerLinkActive="router-link-active">Sign up</a>
-  <a (click)='logout()' >Logout</a>
+  <a (click)='logout()'>Logout</a>
 </div>

@@ -11,11 +11,21 @@ import { NbMenuInternalService } from '@nebular/theme/components/menu/menu.servi
 import { BookComponent } from './book/book.component';
 import { BooksComponent } from './books/books.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { AddBookComponent } from './add-book/add-book.component';
+import { TranslatePipe } from 'src/shared/pipes/translation.pipe';
+import { AppModule } from '../app.module';
 
 
 
 @NgModule({
-  declarations: [LoginComponent, HomeComponent, BookComponent, BooksComponent],
+  declarations: [
+    LoginComponent,
+    HomeComponent,
+    BookComponent,
+    BooksComponent,
+    AddBookComponent,
+    TranslatePipe,
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -26,7 +36,7 @@ import { AppRoutingModule } from '../app-routing.module';
     NbCardModule,
     NbMenuModule,
     AppRoutingModule,
-    NbIconModule
+    NbIconModule,
   ],
   providers: [NbMenuService, NbSidebarService],
 })
