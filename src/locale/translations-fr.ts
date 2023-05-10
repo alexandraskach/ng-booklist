@@ -14,6 +14,7 @@ export const dictionary: { [key: string]: TranslationSet } = {
       books_title: 'Mes livres 📖',
       books: 'Livres',
       logout: 'Deconnexion',
+      send: 'Envoyer',
     },
   },
   eng: {
@@ -29,6 +30,7 @@ export const dictionary: { [key: string]: TranslationSet } = {
       books_title: 'My books 📖',
       books: 'Books',
       logout: 'Log out',
+      send: 'Send',
     },
   },
 };

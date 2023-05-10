@@ -9,7 +9,7 @@ import { TranslationService } from 'src/shared/services/translation.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  selectedLanguage: string = 'fr';
+  selectedLanguage!: string;
   size: NbComponentSize = 'small';
 
   constructor(private restService: AuthService,private translationService : TranslationService, private cdRef: ChangeDetectorRef) {}
